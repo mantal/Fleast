@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30717.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Groww", "Groww\Groww.csproj", "{21C4E098-E5CF-4CC9-A802-3E315760357C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Groww.Front", "Groww.Front\Groww.Front.csproj", "{2877CC42-F494-4507-932B-E4DFABCB822C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21C4E098-E5CF-4CC9-A802-3E315760357C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21C4E098-E5CF-4CC9-A802-3E315760357C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21C4E098-E5CF-4CC9-A802-3E315760357C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21C4E098-E5CF-4CC9-A802-3E315760357C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2877CC42-F494-4507-932B-E4DFABCB822C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2877CC42-F494-4507-932B-E4DFABCB822C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2877CC42-F494-4507-932B-E4DFABCB822C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2877CC42-F494-4507-932B-E4DFABCB822C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6D3655FE-94D5-4AB7-A907-D5EAD6F3D827}
+	EndGlobalSection
+EndGlobal
