@@ -18,8 +18,6 @@ namespace Groww.Buildings
 
 	public class FoodStore : Building
 	{
-		public string Name { get; set; }
-
 		public override void OnBuild(Tribe tribe)
 		{
 			var food = tribe.Resources.First(r => r.Name == "Food");
