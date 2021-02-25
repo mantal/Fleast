@@ -1,6 +1,7 @@
 ﻿@page "/"
+@using Groww.World
 
-<h1>Hello, world!</h1>
+<h1>@_area.Biome.Name (@_game.Tribe.PosX, @_game.Tribe.PosY)</h1>
 
 <div>
     @foreach (var human in _game.Tribe.Humans)
@@ -16,7 +17,14 @@
     }
 </div>
 
-<button @onclick="@PassTurn">Pass turn</button>
+<button @onclick="_ => Move(0, 1)">North</button>
+<br />
+<button @onclick="_ => Move(1, 0)">West</button>
+<button @onclick="_ => Move(-1, 0)">East</button>
+<br />
+<button @onclick="_ => Move(0, -1)">South</button>
+
+<button @onclick="@PassTurn">Wait</button>
 
 @code
 {
@@ -24,9 +32,19 @@
     {
         _game = new Game();
         _game.Init();
+        _area = _game.World.Areas[_game.Tribe.PosX, _game.Tribe.PosY];
     }
 
     private Game _game;
+    private Area _area;
+
+    private void Move(int relativeX, int relativeY)
+    {
+        _game.Tribe.PosX += relativeX;
+        _game.Tribe.PosY += relativeY;
+        _area = _game.World.Areas[_game.Tribe.PosX, _game.Tribe.PosY];
+        PassTurn(null);
+    }
 
     private void PassTurn(EventArgs _)
     {
