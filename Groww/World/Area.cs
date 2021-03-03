@@ -17,37 +17,13 @@ namespace Groww.World
 							   {
 								   0 => new Area
 								   {
-									   Biome = new Biome
-									   {
-										   Name = "Plain",
-										   SpeedMultiplier = 1,
-									   },
-									   Resources = new []
-									   {
-										   new Food
-										   {
-											   Amount = 500,
-											   Max = 1000,
-											   Name = "Food",
-										   },
-									   },
+									   Biome = Biome.Plains,
+									   Resources = Biome.Plains.Resources,
 								   },
 								   1 => new Area
 								   {
-									   Biome = new Biome
-									   {
-										   Name = "Forest",
-										   SpeedMultiplier = .5,
-									   },
-									   Resources = new []
-									   {
-										   new Food
-										   {
-											   Amount = 1000,
-											   Max = 2000,
-											   Name = "Food",
-										   },
-									   },
+									   Biome = Biome.Forest,
+									   Resources = Biome.Forest.Resources,
 								   },
 								   _ => throw new System.NotImplementedException(),
 							   };
@@ -61,10 +37,4 @@ namespace Groww.World
         public IEnumerable<Resource> Resources { get; set; }
         public Biome Biome { get; set; }
      }
-
-	public class Biome
-	{
-		public string Name { get; set; }
-		public double SpeedMultiplier { get; set; }
-	}
 }
