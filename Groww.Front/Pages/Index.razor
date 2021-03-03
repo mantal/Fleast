@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using Groww.World
+@using Action = Groww.World.Action
 
 <h1>@_area.Biome.Name (@_game.Tribe.PosX, @_game.Tribe.PosY)</h1>
 
@@ -23,7 +24,16 @@
 <button @onclick="_ => Move(-1, 0)">East</button>
 <br />
 <button @onclick="_ => Move(0, -1)">South</button>
+<br />
 
+<div>
+    @foreach (var action in _game.Tribe.Actions.Where(a => a.IsAvailable(_area)))
+    {
+        <button @onclick="_ => Action(action)">@action.Name</button>
+    }
+</div>
+
+<br />
 <button @onclick="@PassTurn">Wait</button>
 
 @code
@@ -49,5 +59,12 @@
     private void PassTurn(EventArgs _)
     {
         _game.Tick();
+        Console.WriteLine($"{string.Join("|", _area.Resources.Select(r => r.Name + r.Amount))}");
+}
+
+    private void Action(Action action)
+    {
+        action.Do(_area, _game.Tribe);
+        PassTurn(null);
     }
 }

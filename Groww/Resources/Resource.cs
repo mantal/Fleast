@@ -8,6 +8,9 @@
 		
 		public void Tick(int month)
 		{ }
+
+		public static string Food { get; } = "Food";//tmp
+		public static string Wood { get; } = "Wood";//tmp
 	}
 
 	public class Food : Resource
